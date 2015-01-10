@@ -7,9 +7,9 @@
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
 </head>
 <body>
-<nav class="navbar navbar-default">
+<!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+    Brand and toggle get grouped for better mobile display
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
@@ -17,10 +17,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">Music Manager Exercise</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+    Collect the nav links, forms, and other content for toggling
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
@@ -57,16 +57,100 @@
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+    </div>/.navbar-collapse
+  </div>/.container-fluid
+</nav> -->
 	
+	<div class="container">
+	<h1>Music Manager Exercise</h1>
+	<div class="addMusic row">
+		<div class="col-md-6">
+			<label for="">Add Music</label>
+			<ul>
+				<li>
+					<label for="">Name</label>
+					<input type="text" name="" id="" data-ng-model="newMusic.name"/>
+				</li>
+				<li>
+					<label for="">Author</label>
+					<input type="text" name="" id="" data-ng-model="newMusic.author"/>
+				</li>
+				<li>
+					<label for="">Artists</label>
+					<input type="text" name="" id="" data-ng-model="newMusic.artists"/>
+				</li>
+				<li>
+					<button class="btn" data-ng-click="addMusic(newMusic)">Add</button>
+					<button class="btn" data-ng-click="remove()">Remove</button>
+				</li>
+			</ul>
+			
+			
+		</div>
+		<!-- <div class="col-md-6">
+			<label for="">Search</label>
+			<input type="search" name="" id="" data-ng-model="searchMusic"/>
+			<button class="btn">Search</button>
+		</div> -->
+	</div>
+	
+	<table class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>name</th>
+					<th>artists</th>
+					<th>author</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr data-ng-repeat="music in aMusics">
+					<td>
+						<input type="checkbox" name="" id="" data-ng-model="checked"/>
+					</td>
+					<td data-ng-bind="music.name"></td>
+					<td data-ng-bind="music.artists"></td>
+					<td data-ng-bind="music.author"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
 	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
 	<script type="text/javascript">
 		angular.module('MusicManagerApp', [])
-		.controller('MainCtrl', function($scope){
-			$scope.title = 'Music Manager Exercise';
+		.factory('PageTitle', function(){
+			var PageTitle = {
+				title: 'Music Manager Exercise',
+				getTitle: getTitle,
+				setTitle: setTitle
+			};
+			function getTitle(){
+				return PageTitle.title;
+			}
+			function setTitle(title){
+				PageTitle.title = title;
+			}
+			return PageTitle;
 		})
+		.controller('MainCtrl', function($scope, PageTitle){
+			$scope.newMusic = {};
+			$scope.aMusics = [
+				{ id: 1420869634000, name: 'Stronger', author: 'unknow', 'artists': 'Kelly clarkson'},
+				{ id: 1420869636000, name: 'What makes you beatyful', author: 'unknow', 'artists': 'Direction'},
+				{ id: 1420869638000, name: 'No Promist', author: 'unknow', 'artists': 'Shayne Ward'}
+			]
+			PageTitle.setTitle('Dashboard');
+			
+			$scope.title = PageTitle.getTitle();
+			// add music
+			$scope.addMusic = function(music){
+				music.id = Date.parse(new Date);
+				$scope.aMusics.push(music);
+				$scope.newMusic = {};
+			}
+			// delete music
+		})
+		
 	</script>
 </body>
 </html>
