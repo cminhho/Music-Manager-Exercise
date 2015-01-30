@@ -71,7 +71,9 @@ musicManager.controller('MainCtrl', function($scope, $location, localize,$dialog
 //List Controller
 musicManager.controller('ListCtrl', function($scope,$rootScope,$routeParams, $resource, $location, Song){
 
-    $scope.songs = [];
+    $scope.songs = {
+      totalElements: 0
+	};
 
     //data config for ng-grid
     $scope.buttonsTemplate = '<div class="actionCell">\
@@ -93,12 +95,10 @@ musicManager.controller('ListCtrl', function($scope,$rootScope,$routeParams, $re
     };
 
     // load data function
-    $scope.getPagedDataAsync = function (pageSize, page) {
-        var start = pageSize * (page - 1);
-        Song.queryPaging({start: start, max: pageSize}, function (songs) {
-            $scope.songs = songs.content;
-            $scope.gridOptions.selectedItems.length = 0;
-            
+    $scope.getPagedDataAsync = function (size, page) {
+        Song.queryPaging({page: (page - 1), size: size}, function (songs) {
+            $scope.songs = songs;
+            $scope.gridOptions.selectedItems.length = 0;            
             if (!$scope.$$phase) {
                 $scope.$apply();
             }
@@ -122,8 +122,8 @@ musicManager.controller('ListCtrl', function($scope,$rootScope,$routeParams, $re
     }, true);
 
     $scope.gridOptions = {
-        totalServerItems: $scope.songs.length,
-        data: 'songs',
+        totalServerItems: $scope.songs.totalElements,
+        data: 'songs.content',
         showFooter: true,
         showHeader: true,
         showSelectionCheckbox: true,

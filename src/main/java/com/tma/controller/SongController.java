@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,13 +31,13 @@ public class SongController {
 	SongService songService = (SongService) context.getBean("songService");
 	
 	@RequestMapping(method=RequestMethod.GET)
-	@ResponseBody public Page<Song> getQueryPagging(@RequestBody String start, @RequestBody String max, @RequestBody String direction, @RequestBody String properties){
-		return songService.getAllPagging(new PageRequest(Integer.parseInt("0"), Integer.parseInt("5"), Direction.ASC, "name"));
+	@ResponseBody public Page<Song> getAll(@RequestParam String page, @RequestParam String size){
+		return songService.findAll(new PageRequest(Integer.parseInt(page), Integer.parseInt(size), Direction.ASC, "name"));
 	}
-
-	@RequestMapping(value="/all", method=RequestMethod.GET)
-	@ResponseBody public List<Song> getAll(){
-		return songService.getAll();
+	
+	@RequestMapping(value="/search", method=RequestMethod.GET)
+	@ResponseBody public Page<Song> getByName(@RequestParam String name){
+		return songService.findByNameSongPagging(name, new PageRequest(Integer.parseInt("0"), Integer.parseInt("5"), Direction.ASC, "name"));
 	}
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)

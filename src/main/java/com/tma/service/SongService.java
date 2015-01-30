@@ -22,20 +22,16 @@ public class SongService implements SongServiceImpl{
 		this.songDao = songDao;
 	}
 
+
 	@Override
-	public Page<Song> findByNameSongPagging(String namesong, Pageable pageable) {
+	public Page<Song> findAll(Pageable pageable){
+		return songDao.findAll(pageable);
+	}
+	
+	@Override
+	public Page<Song> findByNameSongPagging(String name, Pageable pageable) {
 		// TODO Auto-generated method stub
-		return songDao.findAll(pageable);
-	}
-
-	@Override
-	public Page<Song> getAllPagging(Pageable pageable) {
-		return songDao.findAll(pageable);
-	}
-
-	@Override
-	public List<Song> getAll() {
-		return songDao.findAll();
+		return songDao.findByName(name, pageable);
 	}
 
 	@Override
@@ -45,18 +41,12 @@ public class SongService implements SongServiceImpl{
 		}
 	}
 	
-//	-----------------------------------------------
 	@Override
 	public Iterable<Song> findAll(Sort arg0) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public Page<Song> findAll(Pageable arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public long count() {
@@ -82,8 +72,7 @@ public class SongService implements SongServiceImpl{
 
 	@Override
 	public void deleteAll() {
-		// TODO Auto-generated method stub
-		
+		songDao.deleteAll();
 	}
 
 	@Override
@@ -106,13 +95,11 @@ public class SongService implements SongServiceImpl{
 
 	@Override
 	public Song findOne(String id) {
-		// TODO Auto-generated method stub
 		return songDao.findOne(id);
 	}
 
 	@Override
 	public <S extends Song> S save(S arg0) {
-		// TODO Auto-generated method stub
 		songDao.save(arg0);
 		return null;
 	}
@@ -122,58 +109,6 @@ public class SongService implements SongServiceImpl{
 		// TODO Auto-generated method stub
 		return null;
 	}
-//
-//	@Override
-//	public Song getWithId(String id) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public void addSong(Song song) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void deleteSong(String id) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void updateSong(String id, Song song) {
-//		// TODO Auto-generated method stub
-//		
-//	}
 
-	
-	
-//	@Override
-//	public List<Song> getAll() {
-//		return songDao.findAll();
-//	}
-//
-//	@Override
-//	public Song getWithId(String id) {
-//		return songDao.findOne(id);
-//	}
-//
-//	@Override
-//	public void addSong(Song song) {
-//		songDao.save(song);
-//	}
-//
-//	@Override
-//	public void deleteSong(String id) {
-//		songDao.delete(id);
-//	}
-//
-//	@Override
-//	public void updateSong(String id, Song song) {
-//		if(songDao.findOne(id) != null){
-//			songDao.save(song);
-//		}
-//	}
 
 }
