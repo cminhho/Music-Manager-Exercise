@@ -166,11 +166,11 @@ musicManager.controller('ListCtrl', function($scope,$rootScope,$routeParams, $re
     };
 
     $scope.onDeleteClick = function($event, row) {
-        row.entity.$delete({songId:row.entity.id}, function() {
-            // reload data
-            $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
-        });
-        $event.stopPropagation();
+    	var SongResource = new Song();
+    	SongResource.$delete({songId: row.entity.id}, function(){
+    		$scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+    	});
+    	$event.stopPropagation();
     };
 
     $scope.delete = function(songs) {
@@ -190,7 +190,7 @@ musicManager.controller('ListCtrl', function($scope,$rootScope,$routeParams, $re
     // listen event
     if (typeof(EventSource) !== "undefined") {
         // Yes! Server-sent events support!
-        var source = new EventSource("resources/song/events");
+        var source = new EventSource("api/song/events");
         source.onmessage = function (event) {
             console.log('Received unnamed event: ' + event.data);
             $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
@@ -214,19 +214,20 @@ musicManager.controller('ListCtrl', function($scope,$rootScope,$routeParams, $re
 });
 
 //Details Controller (/song/:id)
-musicManager.controller('DetailCtrl', function($scope, $routeParams, $location, $dialog, dialog, song){
+musicManager.controller('DetailCtrl', function($scope, $routeParams, $location, $dialog, dialog, song, Song){
     $scope.item = song;
-
+    var SongResource = new Song();
     $scope.update = function(song) {
         //song.$save();
-        song.$update({songId: song.id});
-
+    	Song.update({songId: song.id}, song, function(){
+        	console.log(song)
+    	});
         dialog.close(song);
         $scope.$destroy();
     }
 
     $scope.delete = function(song) {
-        song.$delete({songId:song.id}, function() {
+    	SongResource.$delete({songId: song.id}, function() {
             //close dialog
             dialog.close("deletedSong");
             $scope.$destroy();
@@ -265,15 +266,16 @@ musicManager.controller('AddCtrl', function($scope, $routeParams,$location,dialo
     $scope.song = {};
 
     $scope.uploadFile = function(content, completed) {
-        console.log("_______________ IN UPLOAD _____________");
-        console.log("completed: " + completed+ "-------------------->content: " + content);
-        if (completed && content.length > 0) {
-            console.log("upload completed!");
-
-            $location.url("/");
-            dialog.close();
-            $scope.$destroy();
-        }
+    	console.log($scope.song)
+//        console.log("_______________ IN UPLOAD _____________");
+//        console.log("completed: " + completed+ "-------------------->content: " + content);
+//        if (completed && content.length > 0) {
+//            console.log("upload completed!");
+//
+//            $location.url("/");
+//            dialog.close();
+//            $scope.$destroy();
+//        }
     };
     $scope.close = function(){
         dialog.close();

@@ -37,7 +37,7 @@ public class SongController {
 	
 	@RequestMapping(value="/search", method=RequestMethod.GET)
 	@ResponseBody public Page<Song> getByName(@RequestParam String name){
-		return songService.findByNameSongPagging(name, new PageRequest(Integer.parseInt("0"), Integer.parseInt("5"), Direction.ASC, "name"));
+		return songService.findByName(name, new PageRequest(Integer.parseInt("0"), Integer.parseInt("5"), Direction.ASC, "name"));
 	}
 	
 	@RequestMapping(value="/{id}", method=RequestMethod.GET)

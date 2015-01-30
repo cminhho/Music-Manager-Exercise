@@ -22,14 +22,13 @@ public class SongService implements SongServiceImpl{
 		this.songDao = songDao;
 	}
 
-
 	@Override
 	public Page<Song> findAll(Pageable pageable){
 		return songDao.findAll(pageable);
 	}
 	
 	@Override
-	public Page<Song> findByNameSongPagging(String name, Pageable pageable) {
+	public Page<Song> findByName(String name, Pageable pageable) {
 		// TODO Auto-generated method stub
 		return songDao.findByName(name, pageable);
 	}
@@ -40,7 +39,11 @@ public class SongService implements SongServiceImpl{
 			songDao.save(song);
 		}
 	}
-	
+
+	@Override
+	public void addSong(Song song) {
+		songDao.save(song);
+	}
 	@Override
 	public Iterable<Song> findAll(Sort arg0) {
 		// TODO Auto-generated method stub
@@ -110,5 +113,7 @@ public class SongService implements SongServiceImpl{
 		return null;
 	}
 
+
+	
 
 }

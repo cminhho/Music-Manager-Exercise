@@ -7,22 +7,24 @@ public class Song {
 	private String id;
 	private String name;
 	private String genre;
-	private String lastedUpdate;
+	private String file;
 	
 	public Song() {
 	}
 	
-	public Song(String name, String genre) {
+	public Song(String name, String genre, String file) {
 		super();
 		this.name = name;
 		this.genre = genre;
+		this.file = file;
 	}
 
-	public Song(String id, String name, String genre, String lastedUpdate) {
+	public Song(String id, String name, String genre, String file) {
+		super();
 		this.id = id;
 		this.name = name;
 		this.genre = genre;
-		this.lastedUpdate = lastedUpdate;
+		this.file = file;
 	}
 	public String getId() {
 		return id;
@@ -42,16 +44,18 @@ public class Song {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public String getLastedUpdate() {
-		return lastedUpdate;
+	public String getFile() {
+		return file;
 	}
-	public void setLastedUpdate(String lastedUpdate) {
-		this.lastedUpdate = lastedUpdate;
+	public void setFile(String file) {
+		this.file = file;
 	}
 	@Override
 	public String toString() {
 		return "Song [id=" + id + ", name=" + name + ", genre=" + genre
-				+ ", lastedUpdate=" + lastedUpdate + "]";
+				+ ", file=" + file + "]";
 	}
+	
+	
 		
 }
