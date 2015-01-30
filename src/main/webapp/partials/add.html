@@ -1,0 +1,27 @@
+<form name="addMusic" action="resources/song" method="post"  ng-upload>
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()" >×</button>
+    <h4>{{'_AddSong_' | i18n}}</h4>
+</div>
+<div class="modal-body">
+    <label for="name">{{'_Name_' | i18n}}</label>
+    <div>
+        <input type="text" id="name" name="name" placeholder="{{'_Name_' | i18n}}" ng-model="song.name" required >
+    </div>
+
+    <label for="genre">{{'_Genre_' | i18n}}</label>
+    <div>
+        <input type="text" id="genre" name="genre" placeholder="{{'_Genre_' | i18n}}" ng-model="song.genre">
+    </div>
+    <label for="uploadedFile">{{'_File_' | i18n}}</label>
+    <div>
+        <input type="file" id="uploadedFile" name="uploadedFile" ng-model="song.file" valid-file required>
+    </div>
+</div>
+<div class="modal-footer">
+    <button upload-submit="uploadFile(content, completed)" type="submit" class="btn btn-success"   ng-disabled="addMusic.$invalid">{{'_Add_Btn' | i18n}}</button>
+</div>
+</form>
+
+
+

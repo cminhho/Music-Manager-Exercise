@@ -3,10 +3,12 @@ package com.tma.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import com.tma.dao.UserDao;
 import com.tma.model.User;
 
+@Component
 public class UserService implements UserServiceImpl {
 	private UserDao userRepository;
 

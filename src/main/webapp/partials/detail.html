@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()" >×</button>
+    <h4>{{'_Song_' | i18n}}</h4>
+</div>
+<div class="modal-body">
+    <audio id="player" autoplay="false" controls  class="player" src="{{item.path}}">
+        Your browser does not support the audio element.
+    </audio>
+
+    <p><b>{{'_Name_' | i18n}} : </b>{{item.name}} </p>
+    <p><b>{{'_Genre_' | i18n}}: </b>{{item.genre}} </p>
+
+</div>
+<div class="modal-footer">
+    <a class="btn" ng-click="openEditDialog(item)">{{'_Edit_Btn' | i18n}}</a>
+</div>
+
+
+
+
+

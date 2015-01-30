@@ -3,6 +3,7 @@ package com.tma.controller;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -13,18 +14,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tma.model.User;
+import com.tma.service.SongService;
 import com.tma.service.UserService;
 
 @Controller
 @RequestMapping(value="/user", produces="application/json")
 public class UserController {
-
+	
 		private static final Logger logger = Logger.getLogger(UserController.class);
 	
-//		UserService userService = (UserService) SpringApplicationContext.getBean("userService");
-		
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		UserService userService = (UserService) context.getBean("userService");
+		
+//		@Autowired
+//		UserService userService;
 		
 		@RequestMapping(method=RequestMethod.GET, produces="application/json")
 		@ResponseBody public List<User> getAll(){

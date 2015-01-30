@@ -1,0 +1,55 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/* Custom container */
+.container-narrow {
+    margin: 0 auto;
+    max-width: 700px;
+}
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.main_view {
+    margin: 60px 0;
+    min-height: 500px;
+}
+
+.player {
+    width: 530px;
+}
+
+.v-separator {
+    border-left: 1px solid Black;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.gridStyle
+{
+    border: 1px solid rgb(212,212,212);
+    height: 400px;
+    /*width: 80%*/
+
+    clear: both;
+}
+
+.actionCell {
+    margin-top: 5px;
+    margin-left: 5px
+}
+
+.info {
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 2.2em;
+    margin-left: 2em;
+
+}
+
+input#uploadedFile {
+    box-shadow: none;
+}

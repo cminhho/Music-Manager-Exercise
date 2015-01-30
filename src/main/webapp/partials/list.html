@@ -1,0 +1,10 @@
+<div class="input-prepend">
+    <button class="btn btn-success" ng-click="openAddDialog()">{{'_Add_' | i18n}}</button>
+</div>
+<div class="input-prepend">
+    <a class="btn" ng-click="delete(gridOptions.selectedItems)" ng-disabled="gridOptions.selectedItems.length == 0" data-i18n="_Delete_"></a>
+</div>
+<div class="input-prepend pull-right">
+    <input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="{{'_Search_' | i18n}}">
+</div>
+<div class="gridStyle" ng-grid="gridOptions"></div>

@@ -1,0 +1,12 @@
+'use strict';
+
+/* Services */
+
+angular.module('musicManager.songServices', ['ngResource'])
+    .factory('Song', function($resource) {
+        return $resource('resources/song/:songId' , {} , {
+            query: {method:'GET', params:{songId:'all'}, isArray:true},
+            queryPaging: {method: 'GET', params: {start: 'start', max: 'max'}, isArray:true},
+            update: {method:'PUT'}
+        });
+    });

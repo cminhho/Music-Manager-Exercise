@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()" >×</button>
+    <h4>{{'_Song_' | i18n}}</h4>
+</div>
+<div class="modal-body">
+    <div>
+        <label for="inputName">{{'_Name_' | i18n}}:</label>
+        <div>
+            <input type="text" id="inputName" placeholder="{{'_Name_' | i18n}}" ng-model="item.name"  required>
+        </div>
+
+        <label for="inputGenre">{{'_Genre_' | i18n}}:</label>
+        <div>
+            <input type="text" id="inputGenre" placeholder="{{'_Genre_' | i18n}}" ng-model="item.genre" required>
+        </div>
+    </div>
+
+</div>
+<div class="modal-footer">
+    <a class="btn btn-success" ng-click="update(item)">{{'_Save_Btn' | i18n}}</a>
+    <a class="btn" ng-click="delete(item)">{{'_Delete_Btn' | i18n}}</a>
+</div>
