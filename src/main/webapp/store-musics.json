@@ -1,0 +1,52 @@
+[
+  {
+	"id": 1,
+    "name": "25 Minutes",
+    "artist": "Michael Learns To Rock"
+  },
+  {
+	"id": 2,
+    "name": "As Long As You Love Me",
+    "artist": "Backstreet Boys"
+  },
+  {
+	"id": 3,
+    "name": "Heal The World",
+    "artist": "Michael Jackson"
+  },
+  {
+	"id": 4,
+    "name": "How Did I Fall In Love With You",
+    "artist": "Yao Si Ting"
+  },
+  {
+	"id": 5,
+    "name": "Love To Be Loved By You",
+    "artist": "Marc Terenzi"
+  },
+  {
+	"id": 6,
+    "name": "More Than I Can Say",
+    "artist": "Leo Sayer"
+  },
+  {
+	"id": 7,
+    "name": "Seasons In The Sun ",
+    "artist": "Westlife"
+  },
+  {
+	"id": 8,
+    "name": "Take Me To Your Heart",
+    "artist": "Michael Learns To Rock"
+  },
+  {
+	"id": 9,
+    "name": "This Is Love",
+    "artist": "Tokyo Square"
+  },
+  {
+	"id": 10,
+    "name": "Until You",
+    "artist": "Shayne Ward"
+  }
+]

@@ -1,0 +1,16 @@
+<div class="row placeholders nav-path">
+    <div class="col-xs-6 col-sm-12 placeholder">
+                    <span id="content-heder-left">
+                        <ul class="musicPath">
+                            <li>
+                                <a href="#/">Home</a>
+                            </li>
+                            <li ng-repeat="nav in navs"><span class="glyphicon glyphicon-chevron-right"
+                                                              style="font-size: 15px"></span>
+                                <a href="/#/{{nav}}" ng-show=" ! $last ">{{nav}}</a>
+                                <span ng-show=" $last ">{{nav}}</span>
+                            </li>
+                        </ul>
+                    </span>
+    </div>
+</div>

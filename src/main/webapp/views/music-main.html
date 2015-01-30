@@ -1,0 +1,56 @@
+<div ng-controller="ModalDemoCtrl">
+    <div>
+        <div class="input-group search-top" style="padding-top: 15px">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+              </span>
+                <input type="text" class="form-control" ng-model="search">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="clickRemove()">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+              </span>
+        </div>
+
+        <div class="row placeholders top-article">
+            <div class="col-xs-6 col-sm-6 placeholder left2-title" style="text-align: left">
+                    <span id="title-nav">
+                        <h3>Manager Song</h3>
+                    </span>
+            </div>
+            <div class="col-xs-6 col-sm-6 placeholder left2-button" style=" padding: 15px 15px 0 0;">
+
+                <div class="input-group music-search">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+              </span>
+                    <input type="text" class="form-control" ng-model="search">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="clickRemove()">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+              </span>
+                </div>
+
+            <span class="form-inline btnCtrlRight">
+                <div class="form-group" id="content-header-right">
+                    <a href="#/new" class="" ng-click="goto(#/new)">
+                        <button type="button" class="btn btn-default" ng-click="go('/new')">
+                            <span class="glyphicon glyphicon-plus"></span> <span class="text-func">Add</span>
+                        </button>
+                    </a>
+                    <button type="button" class="btn btn-default" ng-click="removeSelectedRows()"
+                            ng-disabled="btnDelete">
+                        <span class="glyphicon glyphicon-trash"></span> <span class="text-func">Delete</span>
+                    </button>
+                    <!--<button type="button" class="btn btn-default" ng-click="">-->
+                    <!--<span class="glyphicon glyphicon-search"></span> <span class="text-func">Search</span>-->
+                    <!--</button>-->
+                    <music-search></music-search>
+                </div>
+            </span>
+            </div>
+        </div>
+        <music-table facebook-id='demo'></music-table>
+    </div>
+</div>

@@ -1,0 +1,485 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+}
+
+#repair-drop {
+    background: #fafafa;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    float:left;
+    bottom: 0px;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    padding-top: 10px;
+}
+
+.hidden1{
+    max-height: 0px;
+    -webkit-transition: max-height 0.8s;
+    -moz-transition: max-height 0.8s;
+    transition: max-height 0.5s;
+
+}
+.visible{
+    max-height: 100%;
+    -webkit-transition: max-height 0.8s;
+    -moz-transition: max-height 0.8s;
+    transition: max-height 0.5s;
+}
+
+
+/*
+ * Global add-ons
+ */
+.main-container {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+/*--------------Header------------*/
+.navbar-fixed-top{
+    background: white;
+    height: 70px;
+}
+.navbar-brand {
+    height: 100%;
+}
+.navbar-brand {
+    float: left;
+    padding: 10px 0px 10px 15px;
+    line-height: 20px;
+    font-size: 33px;
+    height: 100%;
+}
+#navbar-title{
+    padding-top: 25px;
+}
+#nav-colum{
+    display:none;
+}
+
+
+/*
+ * Sidebar
+ */
+.sidebar{
+    background: white;
+}
+.nav-pills {
+    margin-right: -21px;
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+.nav-pills > li > a {
+    border-radius: 0px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.nav-pills > li + li {
+    margin-left: 0px;
+}
+.nav-pills > li {
+    float: none;
+}
+
+/* Hide for mobile, show later */
+.ui.inverted.menu .active.item {
+    box-shadow: none !important;
+    background-color: #006DCC;
+}
+#sidr{
+    display: block; left: 0px;
+}
+.sidr {
+    box-shadow: none;
+    padding: 0px;
+}
+.sidebar {
+    position: fixed;
+    top: 71px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    /*display: block;*/
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #fafafa;
+    border-right: 1px solid #eee;
+}
+/* Sidebar navigation */
+.nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.nav-sidebar > .active > a {
+    color: #fff;
+    background-color: #428bca;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+    padding: 20px 20px 0px;
+    top: 21px;
+}
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+.main .page-header {
+    margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholder {
+    text-align: right;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+/* Pure css fixed header tables */
+.fixed-table-container {
+    width: 100%;
+    height: 500px;
+    border-bottom: 1px solid #DDDDDD;
+    margin: 10px auto;
+    position: relative;
+    padding-top: 44px;
+}
+.header-background {
+    background-color: #006dcc;
+    height: 45px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+}
+.header-background {
+    border-bottom: 1px solid #DDDDDD;
+}
+.fixed-table-container-inner {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+}
+table {
+    background-color: #FFF;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.table {
+    margin-bottom: 0px;
+}
+.table > thead > tr > th{
+    padding: 0px 8px 0px 8px;
+}
+table > thead > tr > td{
+    vertical-align: middle;
+}
+th {
+    padding: 0px 5px;
+    text-align: left;
+}
+.first .th-inner {
+    border-left: medium none;
+    padding-left: 6px;
+}
+.th-inner {
+    position: absolute;
+    top: 0px;
+    line-height: 30px;
+    text-align: left;
+    border-left: 1px solid #DDDDDD;
+    padding-left: 5px;
+    margin-left: -8px;
+    height: 45px;
+    vertical-align: middle;
+    padding: 8px;
+}
+td {
+    border-bottom: 1px solid #DDDDDD;
+    padding: 5px;
+    text-align: left;
+}
+table > thead > tr > th {
+    color: #ffffff;
+}
+.table > tbody > tr > td, .table > thead > tr > th{
+    vertical-align: middle;
+}
+input[type="checkbox"] {
+    margin: 0px 0px 0px;
+}
+.td-actions{
+    text-align: center;
+}
+/* Add new*/
+
+.ng-invalid.ng-dirty { border: 1px solid red; }
+
+
+/* Container */
+.container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+}
+.container .text-muted {
+    margin: 20px 0;
+}
+.navbar-brand{
+    font-weight: 800;
+}
+
+#content-heder-left{
+    border-bottom: 1px solid;
+    padding: 20px 0px;
+}
+#content-heder-left h3{
+    display: inline;
+}
+#add-new{
+    padding: 15px;
+    border: 1px solid #dddddd;
+    margin-top: 20px;
+}
+/*--------NAV-MAIN------*/
+#content-heder-left ul.musicPath{
+    margin: 0px auto 0px;
+    padding: 10px;
+    text-align:left;
+    list-style: none outside none;
+    font: normal 17px Helvetica,sans-serif !important;
+    overflow: hidden;
+    border: 1px solid #dddddd;
+
+}
+#content-heder-left ul.musicPath li{
+    /*background: url('http://hocwebchuan.com/common/images/ico_arrow01.gif') no-repeat scroll right center transparent;*/
+    /*float: left;*/
+    /*margin-right: 8px;*/
+    /*padding-right: 13px;*/
+    /*width: auto;*/
+    /*text-align:left;*/
+    float: left;
+    margin-right: 0px;
+    padding-right: 10px;
+    width: auto;
+    text-align:left;
+}
+.text-artist{
+    display: none;
+}
+
+
+/*
+*
+*Footer
+*
+*/
+footer{
+    height: 45px;
+    color: #FFF;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 45px;
+    text-align: center;
+    bottom: 0px;
+}
+
+
+/* Tất cả các màn hình có độ phân giải thấp nhất là 1001px */
+@media all and (min-width: 1001px){
+    body{
+        background-color: white;
+    }
+}
+
+/* Màn hình có độ phân giải tối đa 1000px */
+@media screen and (max-width: 1000px){
+    body{
+        background: blue;
+    }
+    .delete-icon, #main-right-nav{
+        display:none;
+    }
+
+}
+
+/* Màn hình có độ phân giải tối đa 768px */
+@media screen and (max-width: 750px) {
+    body{
+        background-color: green;
+    }
+    .main {
+        top: 0px;
+    }
+    .sidebar {
+        /*display: none;*/
+    }
+    .nav-path{
+        display: none;
+    }
+    #nav-colum{
+        display: block;
+    }
+    #nav-colum #header-nav{
+        padding: 6px 0px 6px 0px;
+    }
+}
+
+
+/* Màn hình có độ phân giải tối đa 540px */
+@media screen and (max-width: 540px) {
+    body{
+        background-color: yellow;
+    }
+
+    #add-new {
+        border: none;
+    }
+    #header h1 a {
+        font-size: 25px;
+    }
+    h3, .h3 {
+        font-size: 20px;
+    }
+    header{
+        height: 50px;
+    }
+    header a img{
+        width:40px;
+    }
+    #header img{
+        margin: 5px;
+    }
+    #header h1{
+        margin: 3px;
+    }
+    .text-func{
+        display: none;
+    }
+    article  table {
+        font-size: 13px;
+    }
+    #item-name{
+        font-weight: bold;
+    }
+    .sidebar {
+        max-width: 180px;
+    }
+}
+
+
+/* Màn hình có độ phân giải tối đa 380px */
+@media screen and (max-width: 380px) {
+    body{
+        background-color: white;
+    }
+    .main {
+        padding: 0px 20px 0px 20px;
+    }
+    .navbar-brand {
+        padding: 2px 5px;
+    }
+    .navbar-fixed-top {
+        height: 50px;
+    }
+    .navbar-header a#logo img{
+        width: 40px;
+        padding-top: 3px;
+    }
+    .navbar-header a#navbar-title{
+        font-size: 20px;
+        padding-top: 15px;
+    }
+    .navbar-header .navbar-brand{
+        font-size: 30px;
+    }
+    .table > thead{
+        display:none;
+    }
+    .text-func, .text-func-td{
+        display: none;
+    }
+    .text-artist{
+        display: block;
+    }
+    #td-380{
+        width: 80%;
+    }
+    .table-bordered > tbody > tr > td{
+        border: none;
+        border-bottom: 1px solid #dddddd;
+    }
+    #title-nav h3{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .left2-title{
+        width: 45%;
+        float:left; padding: 2px 0px 0px 15px;
+    }
+    .left2-button{
+        width: 55%;
+    }
+    .sidebar {
+        top: 51px;
+
+    }
+    #sidr{
+        display: none; left: 0px;
+    }
+    .fixed-table-container {
+        width: 100%;
+        height: 100%;
+        border-bottom: 1px solid #DDDDDD;
+        margin: 10px auto;
+        position: relative;
+        padding-top: 44px;
+    }
+    .header-background{
+        position: absolute;
+        display: none;
+    }
+    .fixed-table-container-inner {
+        margin-top: -45px;
+    }
+}
