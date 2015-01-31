@@ -139,7 +139,22 @@
 			<version>1.2.17</version>
 		</dependency>
 
+		<!-- Swagger -->
+		<dependency>
+		    <groupId>com.mangofactory</groupId>
+		    <artifactId>swagger-springmvc</artifactId>
+		    <version>0.9.5</version>
+		</dependency>
+
 	</dependencies>
+
+	<repositories>
+	    <repository>
+	      <id>jcenter-release</id>
+	      <name>jcenter</name>
+	      <url>http://oss.jfrog.org/artifactory/oss-release-local/</url>
+	    </repository>
+	</repositories>
 
 	<build>
 		<finalName>MusicManager</finalName>

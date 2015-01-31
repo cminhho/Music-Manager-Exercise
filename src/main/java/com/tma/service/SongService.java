@@ -8,11 +8,13 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.stereotype.Component;
 
 import com.tma.dao.SongDao;
 import com.tma.dao.UserDao;
 import com.tma.model.Song;
 
+@Component
 public class SongService implements SongServiceImpl{
 
 	private SongDao songDao;
