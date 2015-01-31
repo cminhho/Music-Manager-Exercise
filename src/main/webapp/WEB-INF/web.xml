@@ -11,6 +11,13 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+	<servlet>
+	  <servlet-name>JerseyJaxrsConfig</servlet-name>
+	  <servlet-class>com.wordnik.swagger.jersey.config.JerseyJaxrsConfig</servlet-class>
+	  
+	  <load-on-startup>2</load-on-startup>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<url-pattern>/api/*</url-pattern>

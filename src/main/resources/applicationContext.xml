@@ -15,14 +15,16 @@
 	<mongo:db-factory dbname="Demo" host="localhost"
 		port="27017" />
 
-<!-- 	<bean class="com.mangofactory.swagger.configuration.DocumentationConfig" /> -->
+	<!-- bean class="com.mangofactory.swagger.configuration.DocumentationConfig" /> -->
 	 
-<!-- 	<context:property-placeholder location="classpath:/swagger.properties" /> -->
+	<context:property-placeholder location="classpath:/swagger.properties" />
 
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
 	</bean>
 
+<!-- 	<bean id="songService" class="com.tma.service.SongServiceImpl"> -->
+<!-- 	</bean> -->
 	<bean id="userService" class="com.tma.service.UserService"></bean>
 	<bean id="songService" class="com.tma.service.SongService"></bean>
 
