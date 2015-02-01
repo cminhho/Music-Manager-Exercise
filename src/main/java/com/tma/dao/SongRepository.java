@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.tma.model.Song;
 
-public interface SongDao extends MongoRepository<Song, String> {
+public interface SongRepository extends MongoRepository<Song, String> {
 	
 	@Query("{'name':?0}")
 	Page<Song> findByName(String name, Pageable pageable);

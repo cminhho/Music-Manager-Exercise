@@ -11,13 +11,6 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
-	<servlet>
-	  <servlet-name>JerseyJaxrsConfig</servlet-name>
-	  <servlet-class>com.wordnik.swagger.jersey.config.JerseyJaxrsConfig</servlet-class>
-	  
-	  <load-on-startup>2</load-on-startup>
-	</servlet>
-
 	<servlet-mapping>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<url-pattern>/api/*</url-pattern>
@@ -25,7 +18,7 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
+		<param-value>/WEB-INF/mvc-dispatcher-servlet.xml /WEB-INF/applicationContext.xml</param-value>
 	</context-param>
 
 	<listener>

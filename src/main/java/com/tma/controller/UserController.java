@@ -14,20 +14,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.tma.model.User;
-import com.tma.service.SongService;
-import com.tma.service.UserService;
+import com.tma.service.ISongService;
+import com.tma.service.IUserService;
+import com.tma.service.SongServiceImpl;
+import com.tma.service.UserServiceImpl;
 
 @Controller
 @RequestMapping(value="/user", produces="application/json")
 public class UserController {
 	
 		private static final Logger logger = Logger.getLogger(UserController.class);
-	
-		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		UserService userService = (UserService) context.getBean("userService");
 		
-//		@Autowired
-//		UserService userService;
+		@Autowired
+		IUserService userService;
 		
 		@RequestMapping(method=RequestMethod.GET, produces="application/json")
 		@ResponseBody public List<User> getAll(){
