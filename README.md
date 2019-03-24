@@ -7,9 +7,16 @@ On the server side we expect the application to be deployed in a Tomcat server. 
 
 <b>How should the GUI look?</b>
 
+<img src="https://github.com/cminhho/Music-Manager-Exercise/blob/master/screenshots/home.png" width="500">
+
 The GUI can be very basic: a table which lists all music files.  There should be an action bar with 'Add’ (which leads to ‘Add Song’ page mentioned below), ‘Delete’ buttons and a Search box.  
 
+<img src="https://github.com/cminhho/Music-Manager-Exercise/blob/master/screenshots/add_songs.png" width="500">
+
 We also need to support ‘Play’ and ‘Edit’ modes for each song, as followings:
+
+<img src="https://github.com/cminhho/Music-Manager-Exercise/blob/master/screenshots/song_details.png" width="500">
+<img src="https://github.com/cminhho/Music-Manager-Exercise/blob/master/screenshots/update_song.png" width="500">
 
 
 ## Technology requirements
